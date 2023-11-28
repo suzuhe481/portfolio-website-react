@@ -31,7 +31,7 @@
 
     height: 100vh;
 
-    background-color: $primary-color;
+    background-color: lighten($primary-color, 10%);
 
     // Hides navbar offscreen.
     transform: translateX(100%);
@@ -39,6 +39,24 @@
     // Displays navbar by putting it back on screen.
     &.open {
       transform: translateX(0);
+    }
+
+    &.open .nav-menu__item {
+      // Bounce animation for navbar items.
+      // When navbar opened, link items will bounce before being centered.
+      @include keyframes(bounce) {
+        0% {
+          transform: translateX(100vw);
+        }
+        80% {
+          transform: translateX(-5vw);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+      // Animation- name, duration, timing-function, iteration-count
+      @include animate(bounce, 0.4s, linear, 1);
     }
 
     // Styles for each item.
@@ -57,7 +75,7 @@
 
       // Highlights links on hover
       &:hover {
-        color: yellow;
+        color: darken($hover-color, 20%);
       }
 
       // Highlights link of active page.
