@@ -6,10 +6,10 @@ import Intro from "../../components/Sections/Intro";
 
 function App() {
   return (
-    <>
+    <div className="page__app">
       <Navbar />
       <Intro />
-    </>
+    </div>
   );
 }
 
