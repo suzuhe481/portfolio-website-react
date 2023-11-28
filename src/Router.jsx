@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from "./App";
-import Projects from "./Projects";
+import App from "./pages/App/App";
+import Projects from "./pages/Projects/Projects";
 
 import AppProvider from "./context/AppContext";
 
