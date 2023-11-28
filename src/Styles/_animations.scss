@@ -2,3 +2,15 @@
 @mixin transition-ease {
   transition: all 0.2s ease-in-out;
 }
+
+// Used for adding keyframes to scss files.
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// Used for adding keyframes to scss files.
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
