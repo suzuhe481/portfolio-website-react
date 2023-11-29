@@ -11,6 +11,6 @@
 }
 
 // Used for adding keyframes to scss files.
-@mixin animate($animation, $duration, $method, $times) {
-  animation: $animation $duration $method $times;
+@mixin animate($animation, $duration, $method, $direction, $times) {
+  animation: $animation $duration $direction $method $times;
 }
