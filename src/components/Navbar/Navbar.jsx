@@ -39,22 +39,18 @@ const Navbar = () => {
   return (
     <header>
       <div className={"menu-btn"}>
-        {!menuOpen && (
-          <FontAwesomeIcon
-            className="menu-btn__burger-closed"
-            icon={faBars}
-            size="3x"
-            onClick={toggleMenu}
-          />
-        )}
-        {menuOpen && (
-          <FontAwesomeIcon
-            className="menu-btn__burger-open"
-            icon={faX}
-            size="3x"
-            onClick={toggleMenu}
-          />
-        )}
+        <FontAwesomeIcon
+          className={`menu-btn__burger-closed ${!menuOpen && "active"}`}
+          icon={faBars}
+          size="3x"
+          onClick={toggleMenu}
+        />
+        <FontAwesomeIcon
+          className={`menu-btn__burger-open ${menuOpen && "active"}`}
+          icon={faX}
+          size="3x"
+          onClick={toggleMenu}
+        />
       </div>
 
       <nav className="nav">
