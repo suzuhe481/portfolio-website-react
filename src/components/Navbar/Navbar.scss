@@ -11,6 +11,10 @@
 
   color: $secondary-color;
 
+  &:hover {
+    color: $accent-color;
+  }
+
   // Rotate animation.
   // Shrinks, becomes slightly transparent, then expands to original size, while rotating.
   @include keyframes(rotate) {
@@ -44,7 +48,7 @@
 
   width: 100vw;
 
-  opacity: 0.8;
+  opacity: 0.9;
 
   .nav-menu {
     @include transition-ease;
@@ -105,7 +109,7 @@
 
       // Highlights link of active page.
       &.active {
-        color: darken($primary-color, 50%);
+        color: $accent-color;
       }
     }
   }
