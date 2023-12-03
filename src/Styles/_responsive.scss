@@ -1,0 +1,50 @@
+// Responsive scren values
+@mixin media-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}
+
+// Responsive stylings
+@include media-md {
+  .menu-btn {
+    visibility: hidden;
+  }
+
+  .nav {
+    visibility: visible;
+
+    .nav-menu {
+      display: block;
+      transform: translateX(0);
+
+      height: 100%;
+
+      background-color: transparent;
+
+      text-align: right;
+
+      &__item {
+        display: inline;
+
+        padding-right: 1.5rem;
+      }
+
+      &__link {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
