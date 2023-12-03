@@ -24,11 +24,11 @@ const Navbar = () => {
       case "Home":
         setCurrentPage("home");
         break;
-      case "Projects":
-        setCurrentPage("projects");
-        break;
       case "About Me":
         setCurrentPage("about");
+        break;
+      case "Projects":
+        setCurrentPage("projects");
         break;
       case "Contact Me":
         setCurrentPage("contact");
@@ -66,17 +66,6 @@ const Navbar = () => {
           </li>
           <li className="nav-menu__item">
             <Link
-              to="/projects"
-              className={`nav-menu__link ${
-                currentPage === "projects" && "active"
-              }`}
-              onClick={handleLinkClick}
-            >
-              Projects
-            </Link>
-          </li>
-          <li className="nav-menu__item">
-            <Link
               to=""
               className={`nav-menu__link ${
                 currentPage === "about" && "active"
@@ -86,6 +75,18 @@ const Navbar = () => {
               About Me
             </Link>
           </li>
+          <li className="nav-menu__item">
+            <Link
+              to="/projects"
+              className={`nav-menu__link ${
+                currentPage === "projects" && "active"
+              }`}
+              onClick={handleLinkClick}
+            >
+              Projects
+            </Link>
+          </li>
+
           <li className="nav-menu__item">
             <Link
               to=""
