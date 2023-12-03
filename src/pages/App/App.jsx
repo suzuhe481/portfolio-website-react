@@ -1,8 +1,7 @@
-// import "./App.css";
-import "./App.scss";
-
 import Navbar from "../../components/Navbar/Navbar";
 import Intro from "../../components/Sections/Intro";
+
+import "./App.scss";
 
 function App() {
   return (
