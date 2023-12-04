@@ -2,7 +2,7 @@ import "./Intro.scss";
 
 const Intro = () => {
   return (
-    <main>
+    <div>
       <section className="intro">
         <h2>Hi! My name is</h2>
         <div className="intro__name">
@@ -10,7 +10,7 @@ const Intro = () => {
         </div>
         <h2>Software Developer</h2>
       </section>
-    </main>
+    </div>
   );
 };
 
