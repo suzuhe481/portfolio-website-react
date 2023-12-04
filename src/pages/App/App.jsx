@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar/Navbar";
-import Intro from "../../components/Sections/Intro";
+import Intro from "../../components/Sections/Intro/Intro";
 
 import "./App.scss";
 
