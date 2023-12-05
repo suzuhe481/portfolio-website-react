@@ -12,20 +12,55 @@ const Navbar = () => {
   const { currentPage, setCurrentPage } = useContext(AppContext);
 
   // Sets variable of whether the navmenu is open.
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const toggleMenu = (boolean) => {
+    setMenuOpen(boolean && !menuOpen);
   };
 
   // Stores the name of the current page into the AppContext.
+  // Scrolls to page clicked.
   const handleLinkClick = (e) => {
     const clicked = e.target.innerHTML;
 
     switch (clicked) {
       case "Home":
         setCurrentPage("home");
+
         break;
       case "About Me":
         setCurrentPage("about");
+
+        break;
+      case "Projects":
+        setCurrentPage("projects");
+        break;
+      case "Contact Me":
+        setCurrentPage("contact");
+        break;
+    }
+
+    scrollToSection(clicked);
+    toggleMenu(false);
+  };
+
+  // Scrolls to the given section.
+  const scrollToSection = (section) => {
+    switch (section) {
+      case "Home":
+        setCurrentPage("home");
+
+        window.scrollTo({
+          top: document.querySelector(".intro").offsetTop,
+          behavior: "smooth",
+        });
+
+        break;
+      case "About Me":
+        setCurrentPage("about");
+
+        window.scrollTo({
+          top: document.querySelector(".about").offsetTop,
+          behavior: "smooth",
+        });
         break;
       case "Projects":
         setCurrentPage("projects");
@@ -42,13 +77,11 @@ const Navbar = () => {
         <FontAwesomeIcon
           className={`menu-btn__burger-closed ${!menuOpen && "active"}`}
           icon={faBars}
-          size="3x"
           onClick={toggleMenu}
         />
         <FontAwesomeIcon
           className={`menu-btn__burger-open ${menuOpen && "active"}`}
           icon={faX}
-          size="3x"
           onClick={toggleMenu}
         />
       </div>
@@ -57,7 +90,6 @@ const Navbar = () => {
         <ul className={`nav-menu ${menuOpen ? "open" : ""}`}>
           <li className="nav-menu__item">
             <Link
-              to="/"
               className={`nav-menu__link ${currentPage === "home" && "active"}`}
               onClick={handleLinkClick}
             >
@@ -66,7 +98,6 @@ const Navbar = () => {
           </li>
           <li className="nav-menu__item">
             <Link
-              to=""
               className={`nav-menu__link ${
                 currentPage === "about" && "active"
               }`}
@@ -77,7 +108,6 @@ const Navbar = () => {
           </li>
           <li className="nav-menu__item">
             <Link
-              to="/projects"
               className={`nav-menu__link ${
                 currentPage === "projects" && "active"
               }`}
@@ -89,7 +119,6 @@ const Navbar = () => {
 
           <li className="nav-menu__item">
             <Link
-              to=""
               className={`nav-menu__link ${
                 currentPage === "contact" && "active"
               }`}
