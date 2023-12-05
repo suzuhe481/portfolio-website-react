@@ -2,12 +2,14 @@
 @import "../../Styles/animations";
 
 .menu-btn {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 1rem;
   left: 1rem;
 
   cursor: pointer;
+
+  font-size: 2rem;
 
   color: $secondary-color;
 
