@@ -14,6 +14,17 @@ const Navbar = () => {
   // Sets variable of whether the navmenu is open.
   const toggleMenu = (boolean) => {
     setMenuOpen(boolean && !menuOpen);
+
+    toggleBackgroundScrolling();
+  };
+
+  // Prevents scrolling of the page when the nav menu is open.
+  const toggleBackgroundScrolling = () => {
+    if (menuOpen) {
+      document.body.style.overflow = "unset";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
   };
 
   // Stores the name of the current page into the AppContext.
