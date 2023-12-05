@@ -1,0 +1,17 @@
+@import "../../../Styles/variables.scss";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  //   margin-top: 5rem;
+  //   margin-left: 2rem;
+  margin-left: 2rem;
+
+  height: 100vh;
+  color: $secondary-color;
+
+  font-size: 1.2rem;
+}
