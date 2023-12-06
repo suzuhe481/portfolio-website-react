@@ -13,6 +13,11 @@
 
   color: $secondary-color;
 
+  padding: 0.3rem;
+
+  background: lighten($primary-color, 2%);
+  border-radius: 5px;
+
   &:hover {
     color: $accent-color;
   }
