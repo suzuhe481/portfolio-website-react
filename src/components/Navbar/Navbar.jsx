@@ -25,6 +25,9 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = "hidden";
     }
+
+    // Always hide X scrollbar.
+    document.body.style.overflowX = "hidden";
   };
 
   // Stores the name of the current page into the AppContext.
@@ -97,7 +100,7 @@ const Navbar = () => {
         />
       </div>
 
-      <nav className="nav">
+      <nav className={`nav ${menuOpen ? "open" : ""}`}>
         <ul className={`nav-menu ${menuOpen ? "open" : ""}`}>
           <li className="nav-menu__item">
             <Link
