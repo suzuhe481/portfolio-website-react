@@ -4,4 +4,11 @@
 
 .page__app {
   background-color: $background-color;
+
+  font-family: "Nova Square";
+}
+
+@font-face {
+  font-family: "Nova Square";
+  src: url("../../fonts/NovaSquare-Regular.ttf");
 }
