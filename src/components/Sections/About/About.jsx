@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div>
       <section className="about">
-        <ul>
+        <ul className="about__list">
           <li>Computer Science, B.S.</li>
           <li>AWS Certified Cloud Practitioner Certification</li>
           <li>Continuously Self-Educated</li>
