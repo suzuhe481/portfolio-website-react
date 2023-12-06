@@ -52,6 +52,12 @@
 
   opacity: 0.9;
 
+  visibility: hidden;
+
+  &.open {
+    visibility: visible;
+  }
+
   .nav-menu {
     @include transition-ease;
 
