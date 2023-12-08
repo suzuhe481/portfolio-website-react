@@ -14,20 +14,6 @@ const Navbar = () => {
   // Sets variable of whether the navmenu is open.
   const toggleMenu = (boolean) => {
     setMenuOpen(boolean && !menuOpen);
-
-    toggleBackgroundScrolling();
-  };
-
-  // Prevents scrolling of the page when the nav menu is open.
-  const toggleBackgroundScrolling = () => {
-    if (menuOpen) {
-      document.body.style.overflow = "unset";
-    } else {
-      document.body.style.overflow = "hidden";
-    }
-
-    // Always hide X scrollbar.
-    document.body.style.overflowX = "hidden";
   };
 
   // Stores the name of the current page into the AppContext.
@@ -78,6 +64,11 @@ const Navbar = () => {
         break;
       case "Projects":
         setCurrentPage("projects");
+
+        window.scrollTo({
+          top: document.querySelector(".projects").offsetTop,
+          behavior: "smooth",
+        });
         break;
       case "Contact Me":
         setCurrentPage("contact");
