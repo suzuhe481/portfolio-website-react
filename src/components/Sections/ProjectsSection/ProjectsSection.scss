@@ -1,3 +1,5 @@
+@import "../../../Styles/variables.scss";
+
 .projects {
   padding: 60px 0;
 
@@ -30,7 +32,7 @@
 
       border: 2px solid white;
       border-radius: 20px;
-      box-shadow: 3px 3px 3px lightgray;
+      box-shadow: 3px 3px 3px $accent-color;
 
       margin: 10px 0;
       height: 10vh;
