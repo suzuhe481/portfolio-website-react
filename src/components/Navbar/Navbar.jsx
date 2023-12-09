@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +9,7 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const { currentPage, setCurrentPage } = useContext(AppContext);
 
   // Sets variable of whether the navmenu is open.
@@ -75,6 +76,39 @@ const Navbar = () => {
         break;
     }
   };
+
+  // Stores current scroll position.
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollPosition(position);
+
+    pageChangeOnScroll(position);
+  };
+
+  // Changes page depending on current scroll position.
+  const pageChangeOnScroll = () => {
+    // Getting positions of sections.
+    // const home = document.querySelector(".intro");
+    const aboutPosition = document.querySelector(".about").offsetTop;
+    const projectsPosition = document.querySelector(".projects").offsetTop;
+
+    // switch true is used to compare against conditionals in switch statements.
+    switch (true) {
+      case scrollPosition < aboutPosition:
+        setCurrentPage("home");
+        break;
+      case scrollPosition > aboutPosition && scrollPosition < projectsPosition:
+        setCurrentPage("about");
+        break;
+      case scrollPosition > projectsPosition:
+        setCurrentPage("projects");
+        break;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  });
 
   return (
     <header>
