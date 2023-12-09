@@ -2,50 +2,57 @@
 @import "../../../../Styles/animations.scss";
 
 .technologies {
-  display: flex;
-  justify-content: center;
-}
-
-.technologies-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 1rem;
-
-  &__card {
-    @include transition-ease;
-
+  &__title {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 1rem;
 
-    border: solid 2px white;
-    border-radius: 5px;
-    margin: 5px 10px;
+    font-size: 2rem;
+    text-decoration: underline;
 
-    height: 8rem;
-    width: 6rem;
-
-    &__name {
-      font-size: 1rem;
-      word-wrap: break-word;
-    }
-
-    // Icon sizing
-    &__icon {
-      font-size: 3rem;
-    }
+    padding: 5px 0;
   }
 
-  // Enlarges card on hover.
-  &__card:hover {
-    transition: transform 0.2s ease-in-out;
-    transform: scale(1.1);
+  .technologies-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+
+    &__card {
+      @include transition-ease;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      border: solid 2px white;
+      border-radius: 5px;
+      margin: 5px 10px;
+
+      height: 8rem;
+      width: 6rem;
+
+      &__name {
+        font-size: 1rem;
+        word-wrap: break-word;
+      }
+
+      // Icon sizing
+      &__icon {
+        font-size: 3rem;
+      }
+    }
+
+    // Enlarges card on hover.
+    &__card:hover {
+      transition: transform 0.2s ease-in-out;
+      transform: scale(1.1);
+    }
   }
 }
