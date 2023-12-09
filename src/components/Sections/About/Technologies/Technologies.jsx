@@ -53,6 +53,8 @@ const TechCards = techData.map((tech) => {
 const Technologies = () => {
   return (
     <section className="technologies">
+      <div className="technologies__title">Technologies</div>
+
       <div className="technologies-container">{TechCards}</div>
     </section>
   );
