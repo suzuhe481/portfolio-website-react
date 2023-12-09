@@ -88,9 +88,10 @@ const Navbar = () => {
   // Changes page depending on current scroll position.
   const pageChangeOnScroll = () => {
     // Getting positions of sections.
+    // Needs a slight offset or page won't be highlighted when selected from navbar.
     // const home = document.querySelector(".intro");
-    const aboutPosition = document.querySelector(".about").offsetTop;
-    const projectsPosition = document.querySelector(".projects").offsetTop;
+    const aboutPosition = document.querySelector(".about").offsetTop - 30;
+    const projectsPosition = document.querySelector(".projects").offsetTop - 30;
 
     // switch true is used to compare against conditionals in switch statements.
     switch (true) {
