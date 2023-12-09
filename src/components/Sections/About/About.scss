@@ -13,7 +13,7 @@
   height: 100vh;
   color: $secondary-color;
 
-  gap: 1rem;
+  gap: 2rem;
 
   &__list {
     display: flex;
@@ -35,7 +35,7 @@
     height: 150vh;
 
     &__list {
-      font-size: 3rem;
+      font-size: 2rem;
     }
   }
 }
