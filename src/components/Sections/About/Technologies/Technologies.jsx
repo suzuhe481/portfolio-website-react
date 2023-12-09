@@ -25,14 +25,21 @@ const techData = [
   { name: "GitHub", icon: faGithub, color: "#707070" },
   { name: "React", icon: faReact, color: "#00d8ff" },
   { name: "Python", icon: faPython, color: "#ffde57" },
-  { name: "SQL", icon: faDatabase },
+  { name: "SQL", icon: faDatabase, color: "#ffffff" },
   { name: "npm", icon: faNpm, color: "#cb3837" },
   { name: "Linux", icon: faLinux, color: "#ee7f53" },
 ];
 
 const TechCards = techData.map((tech) => {
+  // Box shadow for each card in their color.
+  const boxShadowStyle = { boxShadow: `4px 4px 5px ${tech.color}` };
+
   return (
-    <div key={tech.name} className="technologies-container__card">
+    <div
+      key={tech.name}
+      className="technologies-container__card"
+      style={boxShadowStyle}
+    >
       <FontAwesomeIcon
         icon={tech.icon}
         className="technologies-container__card__icon"
