@@ -1,5 +1,6 @@
 @import "../../Styles/variables.scss";
-@import "../../Styles/animations";
+@import "../../Styles/animations.scss";
+@import "../../Styles/responsive.scss";
 
 .menu-btn {
   position: fixed;
@@ -123,6 +124,35 @@
       // Highlights link of active page.
       &.active {
         color: $accent-color;
+      }
+    }
+  }
+}
+
+// RESPONSIVE STYLINGS
+@include media-md {
+  .menu-btn {
+    visibility: hidden;
+  }
+
+  .nav {
+    visibility: visible;
+
+    .nav-menu {
+      display: block;
+      transform: translateX(0);
+
+      height: 100%;
+
+      text-align: right;
+
+      padding: 20px 20px;
+
+      &__item {
+        display: inline;
+
+        padding-right: 1.5rem;
+        font-size: 2rem;
       }
     }
   }
