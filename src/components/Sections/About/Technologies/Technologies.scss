@@ -1,5 +1,6 @@
 @import "../../../../Styles/variables.scss";
 @import "../../../../Styles/animations.scss";
+@import "../../../../Styles/responsive.scss";
 
 .technologies {
   &__title {
@@ -53,6 +54,30 @@
     &__card:hover {
       transition: transform 0.2s ease-in-out;
       transform: scale(1.1);
+    }
+  }
+}
+
+// RESPONSIVE STYLINGS
+@include media-md {
+  .technologies {
+    &__title {
+      font-size: 4rem;
+    }
+
+    .technologies-container {
+      &__card {
+        height: 15rem;
+        width: 20%;
+
+        &__name {
+          font-size: 2rem;
+        }
+
+        &__icon {
+          font-size: 7rem;
+        }
+      }
     }
   }
 }

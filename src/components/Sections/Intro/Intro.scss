@@ -1,4 +1,5 @@
 @import "../../../Styles/variables.scss";
+@import "../../../Styles/responsive.scss";
 
 .intro {
   display: flex;
@@ -19,5 +20,16 @@
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 3px solid $accent-color;
+  }
+}
+
+// RESPONSIVE STYLING
+@include media-md {
+  .intro {
+    font-size: 3rem;
+
+    &__name {
+      font-size: 5rem;
+    }
   }
 }

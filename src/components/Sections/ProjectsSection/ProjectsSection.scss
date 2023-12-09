@@ -1,4 +1,5 @@
 @import "../../../Styles/variables.scss";
+@import "../../../Styles/responsive.scss";
 
 .projects {
   padding: 60px 0;
@@ -62,5 +63,11 @@
         border-left: 3px solid white;
       }
     }
+  }
+}
+
+@include media-md {
+  .projects {
+    padding: 8rem 0;
   }
 }
