@@ -73,6 +73,11 @@ const Navbar = () => {
         break;
       case "Contact Me":
         setCurrentPage("contact");
+
+        window.scrollTo({
+          top: document.querySelector(".contact").offsetTop,
+          behavior: "smooth",
+        });
         break;
     }
   };
@@ -90,8 +95,10 @@ const Navbar = () => {
     // Getting positions of sections.
     // Needs a slight offset or page won't be highlighted when selected from navbar.
     // const home = document.querySelector(".intro");
-    const aboutPosition = document.querySelector(".about").offsetTop - 30;
-    const projectsPosition = document.querySelector(".projects").offsetTop - 30;
+    const aboutPosition = document.querySelector(".about").offsetTop - 500;
+    const projectsPosition =
+      document.querySelector(".projects").offsetTop - 500;
+    const contactPosition = document.querySelector(".contact").offsetTop - 500;
 
     // switch true is used to compare against conditionals in switch statements.
     switch (true) {
@@ -101,8 +108,12 @@ const Navbar = () => {
       case scrollPosition > aboutPosition && scrollPosition < projectsPosition:
         setCurrentPage("about");
         break;
-      case scrollPosition > projectsPosition:
+      case scrollPosition > projectsPosition &&
+        scrollPosition < contactPosition:
         setCurrentPage("projects");
+        break;
+      case scrollPosition > contactPosition:
+        setCurrentPage("contact");
         break;
     }
   };
