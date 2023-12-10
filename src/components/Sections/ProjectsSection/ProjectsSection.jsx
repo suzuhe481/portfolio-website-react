@@ -33,10 +33,10 @@ const ProjectsCards = projectsData.map((project) => {
     <div key={project.title} className="projects-container__card">
       <div className="projects-container__card__title">{project.title}</div>
       <div className="projects-container__card__links">
-        <a href={project.demo}>
+        <a href={project.demo} target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faLink}></FontAwesomeIcon>
         </a>
-        <a href={project.github}>
+        <a href={project.github} target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
         </a>
       </div>
