@@ -1,0 +1,43 @@
+@import "../../Styles/variables";
+@import "../../Styles/animations";
+@import "../../Styles/responsive";
+
+.error {
+  background-color: $background-color;
+  color: $secondary-color;
+
+  font-family: "Nova Square";
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    font-size: 2rem;
+
+    &__link {
+      @include transition-ease;
+
+      display: block;
+      color: $secondary-color;
+      text-decoration: none;
+      text-align: center;
+
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 0.5rem;
+      margin: 1rem;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: "Nova Square";
+  src: url("../../fonts/NovaSquare-Regular.ttf");
+}
