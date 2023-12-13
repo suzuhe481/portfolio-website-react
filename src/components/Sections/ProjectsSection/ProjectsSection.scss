@@ -23,7 +23,9 @@
   &-container {
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 
     &__card {
       display: flex;
@@ -37,6 +39,7 @@
 
       margin: 10px 0;
       height: 10vh;
+      width: 90vw;
 
       &__title {
         display: flex;
@@ -69,5 +72,9 @@
 @include media-md {
   .projects {
     padding: 8rem 0;
+
+    &-container__card {
+      width: 70vw;
+    }
   }
 }
