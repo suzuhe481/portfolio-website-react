@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./pages/App/App";
-import Projects from "./pages/Projects/Projects";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 import AppProvider from "./context/AppContext";
 
@@ -12,8 +12,8 @@ const Router = () => {
       element: <App />,
     },
     {
-      path: "/projects",
-      element: <Projects />,
+      path: "*",
+      element: <ErrorPage />,
     },
   ]);
 
