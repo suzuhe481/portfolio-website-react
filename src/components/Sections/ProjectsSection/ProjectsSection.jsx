@@ -26,6 +26,11 @@ const projectsData = [
     demo: "https://yardsale.hectorsuazo.com",
     github: "https://github.com/suzuhe481/yard-sale-shopping-cart",
   },
+  {
+    title: "Documentation: React Quick Start Guide",
+    demo: "https://github.com/suzuhe481/react-quick-start-guide",
+    github: "https://github.com/suzuhe481/react-quick-start-guide",
+  },
 ];
 
 const ProjectsCards = projectsData.map((project) => {
