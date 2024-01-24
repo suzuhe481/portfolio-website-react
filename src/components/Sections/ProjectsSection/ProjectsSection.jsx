@@ -31,6 +31,11 @@ const projectsData = [
     demo: "https://github.com/suzuhe481/react-quick-start-guide",
     github: "https://github.com/suzuhe481/react-quick-start-guide",
   },
+  {
+    title: "Documentation: Node.js/Express Quick Start Guide",
+    demo: "https://github.com/suzuhe481/node-express-quick-start-guide",
+    github: "https://github.com/suzuhe481/node-express-quick-start-guide",
+  },
 ];
 
 const ProjectsCards = projectsData.map((project) => {
