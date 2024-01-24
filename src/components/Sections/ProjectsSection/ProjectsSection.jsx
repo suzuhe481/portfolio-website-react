@@ -36,6 +36,11 @@ const projectsData = [
     demo: "https://github.com/suzuhe481/node-express-quick-start-guide",
     github: "https://github.com/suzuhe481/node-express-quick-start-guide",
   },
+  {
+    title: "Video Game Inventory",
+    demo: "https://video-game-inventory.glitch.me/inventory",
+    github: "https://github.com/suzuhe481/inventory-management",
+  },
 ];
 
 const ProjectsCards = projectsData.map((project) => {
