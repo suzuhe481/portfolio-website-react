@@ -120,6 +120,7 @@ const Navbar = () => {
     }
   };
 
+  // Adds a scroll event listener to window.
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   });
