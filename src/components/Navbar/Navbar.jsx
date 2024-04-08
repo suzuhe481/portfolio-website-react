@@ -124,6 +124,15 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
   });
 
+  // Scrolls to specific section when using a direct link in the address bar.
+  useEffect(() => {
+    // Conditions when a link is directly used.
+    if (key === "default" && hash) {
+      scrollToSection(hash);
+      return;
+    }
+  }, [hash, key, scrollToSection]);
+
   return (
     <header>
       <div className={"menu-btn"}>
