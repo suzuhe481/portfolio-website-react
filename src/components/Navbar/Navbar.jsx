@@ -12,6 +12,8 @@ const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { currentPage, setCurrentPage } = useContext(AppContext);
 
+  const { hash, key } = useLocation();
+
   // Sets variable of whether the navmenu is open.
   const toggleMenu = (boolean) => {
     setMenuOpen(boolean && !menuOpen);
