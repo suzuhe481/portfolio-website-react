@@ -143,6 +143,7 @@ const Navbar = () => {
         <ul className={`nav-menu ${menuOpen ? "open" : ""}`}>
           <li className="nav-menu__item">
             <Link
+              to="#home"
               className={`nav-menu__link ${currentPage === "home" && "active"}`}
               onClick={handleLinkClick}
             >
@@ -151,6 +152,7 @@ const Navbar = () => {
           </li>
           <li className="nav-menu__item">
             <Link
+              to="#about"
               className={`nav-menu__link ${
                 currentPage === "about" && "active"
               }`}
@@ -161,6 +163,7 @@ const Navbar = () => {
           </li>
           <li className="nav-menu__item">
             <Link
+              to="#projects"
               className={`nav-menu__link ${
                 currentPage === "projects" && "active"
               }`}
@@ -172,6 +175,7 @@ const Navbar = () => {
 
           <li className="nav-menu__item">
             <Link
+              to="#contact"
               className={`nav-menu__link ${
                 currentPage === "contact" && "active"
               }`}
