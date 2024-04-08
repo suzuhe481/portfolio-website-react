@@ -46,43 +46,51 @@ const Navbar = () => {
   };
 
   // Scrolls to the given section.
-  const scrollToSection = (section) => {
-    switch (section) {
-      case "Home":
-        setCurrentPage("home");
+  // Accepts the section name as "About Me" or the hash "#about" (Without quotes).
+  const scrollToSection = useCallback(
+    (section) => {
+      switch (section) {
+        case "Home":
+        case "#home":
+          setCurrentPage("home");
 
-        window.scrollTo({
-          top: document.querySelector(".intro").offsetTop,
-          behavior: "smooth",
-        });
+          window.scrollTo({
+            top: document.querySelector(".intro").offsetTop,
+            behavior: "smooth",
+          });
 
-        break;
-      case "About Me":
-        setCurrentPage("about");
+          break;
+        case "About Me":
+        case "#about":
+          setCurrentPage("about");
 
-        window.scrollTo({
-          top: document.querySelector(".about").offsetTop,
-          behavior: "smooth",
-        });
-        break;
-      case "Projects":
-        setCurrentPage("projects");
+          window.scrollTo({
+            top: document.querySelector(".about").offsetTop,
+            behavior: "smooth",
+          });
+          break;
+        case "Projects":
+        case "#projects":
+          setCurrentPage("projects");
 
-        window.scrollTo({
-          top: document.querySelector(".projects").offsetTop,
-          behavior: "smooth",
-        });
-        break;
-      case "Contact Me":
-        setCurrentPage("contact");
+          window.scrollTo({
+            top: document.querySelector(".projects").offsetTop,
+            behavior: "smooth",
+          });
+          break;
+        case "Contact Me":
+        case "#contact":
+          setCurrentPage("contact");
 
-        window.scrollTo({
-          top: document.querySelector(".contact").offsetTop,
-          behavior: "smooth",
-        });
-        break;
-    }
-  };
+          window.scrollTo({
+            top: document.querySelector(".contact").offsetTop,
+            behavior: "smooth",
+          });
+          break;
+      }
+    },
+    [setCurrentPage]
+  );
 
   // Stores current scroll position.
   const handleScroll = () => {
