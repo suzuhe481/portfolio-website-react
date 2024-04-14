@@ -41,6 +41,11 @@ const projectsData = [
     demo: "https://video-game-inventory.glitch.me/inventory",
     github: "https://github.com/suzuhe481/inventory-management",
   },
+  {
+    title: "Typeshift Game",
+    demo: "https://typeshift.hectorsuazo.com/",
+    github: "https://github.com/suzuhe481/typeshift",
+  },
 ];
 
 const ProjectsCards = projectsData.map((project) => {
