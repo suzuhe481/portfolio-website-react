@@ -135,8 +135,10 @@ const Navbar = () => {
 
   // Keeps the current selection of the nav bar on page refresh.
   useEffect(() => {
+    // const newPage = hash.slice(1, hash.length);
+    // console.log(`new page: ${newPage}`);
     setCurrentPage(hash.slice(1, hash.length));
-  }, [hash, setCurrentPage]);
+  }, []);
 
   // Scrolls to specific section when using a direct link in the address bar.
   useEffect(() => {
