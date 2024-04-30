@@ -133,6 +133,11 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
   });
 
+  // Keeps the current selection of the nav bar on page refresh.
+  useEffect(() => {
+    setCurrentPage(hash.slice(1, hash.length));
+  }, [hash, setCurrentPage]);
+
   // Scrolls to specific section when using a direct link in the address bar.
   useEffect(() => {
     // Conditions when a link is directly used.
