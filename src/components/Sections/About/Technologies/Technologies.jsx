@@ -10,9 +10,12 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import { faPython } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
-// import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { faNpm } from "@fortawesome/free-brands-svg-icons";
 import { faLinux } from "@fortawesome/free-brands-svg-icons";
+import { faNode } from "@fortawesome/free-brands-svg-icons";
+// import { faFileCode } from "@fortawesome/free-solid-svg-icons";
+// import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faPalette } from "@fortawesome/free-solid-svg-icons";
 
 import "./Technologies.scss";
 
@@ -21,9 +24,12 @@ const techData = [
   { name: "CSS", icon: faCss3, color: "#2965f1" },
   { name: "JavaScript", icon: faJs, color: "#f0db4f" },
   { name: "SCSS", icon: faSass, color: "#cc6699" },
+  { name: "React", icon: faReact, color: "#00d8ff" },
+  { name: "Node.js", icon: faNode, color: "#3c873a" },
+  { name: "Tailwind", icon: faPalette, color: "#a5f3fc" },
+  { name: "MongoDB", icon: faDatabase, color: "#589636" },
   { name: "Git", icon: faGitAlt, color: "#F1502F" },
   { name: "GitHub", icon: faGithub, color: "#707070" },
-  { name: "React", icon: faReact, color: "#00d8ff" },
   { name: "Python", icon: faPython, color: "#ffde57" },
   { name: "SQL", icon: faDatabase, color: "#ffffff" },
   { name: "npm", icon: faNpm, color: "#cb3837" },
