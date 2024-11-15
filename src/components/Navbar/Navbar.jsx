@@ -9,8 +9,8 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const { currentPage, setCurrentPage } = useContext(AppContext);
+  const { currentPage, setCurrentPage, scrollPosition, setScrollPosition } =
+    useContext(AppContext);
 
   const { hash, key } = useLocation();
 
@@ -130,15 +130,23 @@ const Navbar = () => {
 
   // Adds a scroll event listener to window.
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
   });
 
+  // Sets navbar selection on page load.
   // Keeps the current selection of the nav bar on page refresh.
   useEffect(() => {
-    // const newPage = hash.slice(1, hash.length);
-    // console.log(`new page: ${newPage}`);
-    setCurrentPage(hash.slice(1, hash.length));
-  }, []);
+    const newPage = hash.slice(1, hash.length);
+
+    // If url contains # (hash/fragment)
+    if (newPage) {
+      setCurrentPage(hash.slice(1, hash.length));
+    }
+    // Set to home
+    else {
+      setCurrentPage("home");
+    }
+  }, [hash, setCurrentPage]);
 
   // Scrolls to specific section when using a direct link in the address bar.
   useEffect(() => {
