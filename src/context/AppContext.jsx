@@ -8,10 +8,20 @@ export const AppContext = createContext({
 });
 
 const AppProvider = (props) => {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState();
+  const [scrollPosition, setScrollPosition] = useState(() => {
+    return document.documentElement.scrollTop;
+  });
 
   return (
-    <AppContext.Provider value={{ currentPage, setCurrentPage }}>
+    <AppContext.Provider
+      value={{
+        currentPage,
+        setCurrentPage,
+        scrollPosition,
+        setScrollPosition,
+      }}
+    >
       {props.children}
     </AppContext.Provider>
   );

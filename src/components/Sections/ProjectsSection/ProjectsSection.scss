@@ -4,8 +4,6 @@
 .projects {
   padding: 60px 0;
 
-  height: 100vh;
-
   & * {
     color: white;
   }
@@ -46,7 +44,7 @@
         flex-direction: column;
         justify-content: center;
 
-        font-size: 1.5rem;
+        font-size: 1rem;
         padding-left: 1rem;
         height: 100%;
         width: 100%;
@@ -64,6 +62,10 @@
         font-size: 2rem;
 
         border-left: 3px solid white;
+
+        & a {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -73,8 +75,16 @@
   .projects {
     padding: 8rem 0;
 
+    &__title {
+      font-size: 3.5rem;
+    }
+
     &-container__card {
-      width: 70vw;
+      width: 60vw;
+
+      &__title {
+        font-size: 2rem;
+      }
     }
   }
 }
