@@ -8,6 +8,8 @@
   top: 1rem;
   left: 1rem;
 
+  z-index: 50;
+
   cursor: pointer;
 
   font-size: 2rem;
@@ -59,6 +61,7 @@
   opacity: 0.9;
 
   visibility: hidden;
+  z-index: 5;
 
   &.open {
     visibility: visible;
@@ -87,7 +90,7 @@
     &.open .nav-menu__item {
       // Bounce animation for navbar items.
       // When navbar opened, link items will bounce before being centered.
-      @include keyframes(bounce) {
+      @include keyframes(custom-bounce) {
         0% {
           transform: translateX(100vw);
         }
@@ -99,7 +102,7 @@
         }
       }
       // Animation- name, duration, timing-function, iteration-count
-      @include animate(bounce, 0.4s, linear, normal, 1);
+      @include animate(custom-bounce, 0.4s, linear, normal, 1);
     }
 
     // Styles for each item.
