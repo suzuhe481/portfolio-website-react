@@ -1,6 +1,9 @@
 import { useState, useRef } from "react";
 import { SendEmail } from "../../../functions/SendEmail";
 
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css/animate.compat.css";
+
 import "./Contact.scss";
 
 const Contact = () => {
@@ -80,8 +83,12 @@ const Contact = () => {
 
   return (
     <section className="contact">
-      <div className="contact__title">Send me a Message</div>
-      <div className="contact__form-container">{FormResult}</div>
+      <ScrollAnimation animateIn="bounceInRight">
+        <div className="contact__title">Send me a Message</div>
+      </ScrollAnimation>
+      <ScrollAnimation animateIn="fadeIn">
+        <div className="contact__form-container">{FormResult}</div>
+      </ScrollAnimation>
     </section>
   );
 };

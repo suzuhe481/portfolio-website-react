@@ -1,3 +1,6 @@
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css/animate.compat.css";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Imports of Font Awesome icons
@@ -41,25 +44,30 @@ const TechCards = techData.map((tech) => {
   const boxShadowStyle = { boxShadow: `4px 4px 5px ${tech.color}` };
 
   return (
-    <div
+    <ScrollAnimation
       key={tech.name}
-      className="technologies-container__card"
-      style={boxShadowStyle}
+      animateIn="fadeIn"
+      animateOnce={true}
+      duration={2}
     >
-      <FontAwesomeIcon
-        icon={tech.icon}
-        className="technologies-container__card__icon"
-        style={{ color: tech.color }}
-      />
-      <div className="technologies-container__card__name">{tech.name}</div>
-    </div>
+      <div className="technologies-container__card" style={boxShadowStyle}>
+        <FontAwesomeIcon
+          icon={tech.icon}
+          className="technologies-container__card__icon"
+          style={{ color: tech.color }}
+        />
+        <div className="technologies-container__card__name">{tech.name}</div>
+      </div>
+    </ScrollAnimation>
   );
 });
 
 const Technologies = () => {
   return (
     <section className="technologies">
-      <div className="technologies__title">Technologies</div>
+      <ScrollAnimation animateIn="bounceInRight" animateOnce={true}>
+        <div className="technologies__title">Technologies</div>
+      </ScrollAnimation>
 
       <div className="technologies-container">{TechCards}</div>
     </section>
