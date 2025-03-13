@@ -12,6 +12,12 @@
 
   font-size: 1.5rem;
 
+  // Animate on scroll container
+  .animated {
+    text-align: center;
+    width: 100%;
+  }
+
   // Styles the name introduction.
   &__name {
     text-align: center;
