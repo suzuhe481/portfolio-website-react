@@ -1,5 +1,6 @@
 @import "../../../Styles/variables.scss";
 @import "../../../Styles/responsive.scss";
+@import "../../../Styles/animations.scss";
 
 .intro {
   display: flex;
@@ -12,6 +13,15 @@
 
   font-size: 1.5rem;
 
+  // Smooth transitions for text grow on screen size change
+  @include transition-ease;
+
+  // Animate on scroll container
+  .animated {
+    text-align: center;
+    width: 100%;
+  }
+
   // Styles the name introduction.
   &__name {
     text-align: center;
@@ -20,6 +30,9 @@
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 3px solid $accent-color;
+
+    // Smooth transitions for text grow on screen size change
+    @include transition-ease;
   }
 }
 

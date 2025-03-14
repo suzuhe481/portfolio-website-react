@@ -16,7 +16,18 @@ const Navbar = () => {
 
   // Sets variable of whether the navmenu is open.
   const toggleMenu = (boolean) => {
-    setMenuOpen(boolean && !menuOpen);
+    const newMenuOpen = boolean && !menuOpen;
+    setMenuOpen(newMenuOpen);
+
+    // Prevents background from being scrolled when navbar is open on mobile
+    const body = document.body;
+    if (newMenuOpen === true) {
+      console.log("hide");
+      body.style.overflow = "hidden";
+    } else {
+      console.log("show");
+      body.style.overflow = "visible";
+    }
   };
 
   // Stores the name of the current page into the AppContext.
@@ -42,7 +53,9 @@ const Navbar = () => {
     }
 
     scrollToSection(clicked);
-    toggleMenu(false);
+    if (menuOpen) {
+      toggleMenu(false);
+    }
   };
 
   // Scrolls to the given section.
