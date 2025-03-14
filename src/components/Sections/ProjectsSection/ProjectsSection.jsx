@@ -2,6 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css/animate.compat.css";
+
 import "./ProjectsSection.scss";
 
 // Array of projects containing project's name, live demo link, and GitHub link
@@ -61,24 +64,28 @@ const projectsData = [
 
 const ProjectsCards = projectsData.map((project) => {
   return (
-    <div key={project.title} className="projects-container__card">
-      <div className="projects-container__card__title">{project.title}</div>
-      <div className="projects-container__card__links">
-        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faLink}></FontAwesomeIcon>
-        </a>
-        <a href={project.github} target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
-        </a>
+    <ScrollAnimation key={project.title} animateIn="fadeIn" animateOnce={true}>
+      <div className="projects-container__card">
+        <div className="projects-container__card__title">{project.title}</div>
+        <div className="projects-container__card__links">
+          <a href={project.demo} target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faLink}></FontAwesomeIcon>
+          </a>
+          <a href={project.github} target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGithub}></FontAwesomeIcon>
+          </a>
+        </div>
       </div>
-    </div>
+    </ScrollAnimation>
   );
 });
 
 const ProjectsSection = () => {
   return (
     <section className="projects">
-      <div className="projects__title">Projects</div>
+      <ScrollAnimation animateIn="bounceInLeft" animateOnce={true}>
+        <div className="projects__title">Projects</div>
+      </ScrollAnimation>
       <div className="projects-container">{ProjectsCards}</div>
     </section>
   );

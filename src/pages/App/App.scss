@@ -6,6 +6,7 @@
   background-color: $background-color;
 
   font-family: "Nova Square";
+  overflow-x: hidden; // Prevents whitespace on right of screen during slide in animations of intro
 }
 
 @font-face {
